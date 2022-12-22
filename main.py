@@ -2,14 +2,14 @@ from flask import Flask
 from flask_restful import Api, Resource
 
 def LightOn(): #включить свет
-    pass
+    print("light turned on")
 
 def LightOff(): #выключить свет
-    pass
+    print("light turned off")
 
 def GetLightStatus(): #получить статус света
+    print("status was sent")
     return False
-    pass
 
 
 class LightUpdate(Resource):
