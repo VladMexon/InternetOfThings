@@ -13,21 +13,15 @@ def GetLightStatus(): #получить статус света
 
 
 class LightUpdate(Resource):
-    def post(self, id=0):
-       if (id == 1):
-        LightOn()
-       elif(id == 0):
-        LightOff()
-       elif(id == 2):
-        if(GetLightStatus()):
-            LightOff()
-        else:
+    def get(self, id=0):
+        if (id == 1):
             LightOn()
-    def get(self):
+        elif(id == 0):
+            LightOff()
         return GetLightStatus(), 200
 
 if __name__ == '__main__':
     app = Flask(__name__)
     api = Api(app)
     api.add_resource(LightUpdate, "/light", "/light/", "/light/<int:id>")
-    app.run()
+    app.run(host="0.0.0.0")
