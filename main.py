@@ -7,11 +7,11 @@ GPIO.setmode(GPIO.BOARD)
 GPIO.setup(12, GPIO.OUT)
 
 def LightOn(): #включить свет
-    GPIO.putput(12, True)
+    GPIO.output(12, True)
     print("light turned on")
 
 def LightOff(): #выключить свет
-    GPIO.putput(12, False)
+    GPIO.output(12, False)
     print("light turned off")
 
 
