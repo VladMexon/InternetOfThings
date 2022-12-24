@@ -14,10 +14,6 @@ def LightOff(): #выключить свет
     GPIO.putput(12, False)
     print("light turned off")
 
-def GetLightStatus(): #получить статус света
-    print("status was sent")
-    return False
-
 
 class LightUpdate(Resource):
     def get(self, id=0):
@@ -25,7 +21,7 @@ class LightUpdate(Resource):
             LightOn()
         elif(id == 0):
             LightOff()
-        return GetLightStatus(), 200
+        return 200
 
 if __name__ == '__main__':
     app = Flask(__name__)
