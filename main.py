@@ -1,10 +1,17 @@
 from flask import Flask
 from flask_restful import Api, Resource
+import OPi.GPIO as GPIO
+
+GPIO.setboard(GPIO.PC2)
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(12, GPIO.OUT)
 
 def LightOn(): #включить свет
+    GPIO.putput(12, True)
     print("light turned on")
 
 def LightOff(): #выключить свет
+    GPIO.putput(12, False)
     print("light turned off")
 
 def GetLightStatus(): #получить статус света
